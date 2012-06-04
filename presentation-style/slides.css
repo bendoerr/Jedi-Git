@@ -1,0 +1,9 @@
+/* Slightly nicer background */
+.deck-container {
+    background: url("px_by_Gre3g.png");
+}
+
+.deck-container .slide {
+   background: url("light_toast.png");
+   padding: 0 20px;
+}

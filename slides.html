@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Jedi Git</title>
+        <meta name="viewport" content="width=1024, user-scalable=no">
+
+        <!-- Core deck.js, theme, and transition css -->
+        <link rel="stylesheet" href="deck.js/core/deck.core.css" type="text/css">
+        <link rel="stylesheet" href="deck.js/themes/style/web-2.0.css" type="text/css">
+        <link rel="stylesheet" href="deck.js-custom-extensions/cube.css" type"text/css">
+        <link rel="stylesheet" href="deck.js/extensions/menu/deck.menu.css" type"text/css">
+        <link rel="stylesheet" href="presentation-style/slides.css" type="text/css">
+
+        <!-- Additional styling and extensions -->
+
+        <link href='http://fonts.googleapis.com/css?family=Sonsie+One' rel='stylesheet' type='text/css'>
+
+        <!-- 
+        <style type="text/css">
+            .deck-container {
+                background: url("light_toast.png");
+            }
+            .deck-container .slide h1 {
+                font-family: 'Sonsie One', cursive;
+                text-shadow: 5px 2px 4px #666;
+            }
+
+            .deck-container .slide blockquote:first-child {
+                margin-top: 25px;
+            }
+
+            .deck-container .slide blockquote.small {
+                font-size: 0.9em;
+            }
+        </style>
+        -->
+
+        <script src="deck.js/modernizr.custom.js"></script>
+    </head>
+    <body class="deck-container">
+        <section id="title" class="slide">
+        <h1>Jedi Git</h1>
+        </section>
+
+        <section id="title" class="slide">
+        <h1>Jedi Git?</h1>
+        </section>
+
+        <section class="slide">
+        <blockquote class="small">
+            <p>For over a thousand generations, the Jedi Knights were the guardians of peace and justice in the Old Republic.</p>
+            <p><cite>Obi-Wan Kenobi</cite></p>
+        </blockquote>
+        <blockquote class="small">
+            <p>"git" can mean anything, depending on your mood.</p>
+            <ul>
+                <li>random three-letter combination that is pronounceable, and not
+                actually used by any common UNIX command.  The fact that it is a
+                mispronunciation of "get" may or may not be relevant.</li>
+                <li>stupid. contemptible and despicable. simple. Take your pick from the
+                dictionary of slang.</li>
+                <li>"global information tracker": you're in a good mood, and it actually
+                works for you. Angels sing, and a light suddenly fills the room.</li>
+                <li>"goddamn idiotic truckload of sh*t": when it breaks</li>
+            </ul>
+            <p><cite>Linus Torvalds</cite></p>
+        </blockquote>
+
+        <!--
+          At this point, story of how I learned git and why you should listen to me. 
+          -->
+
+        </section>
+
+        <section class="slide">
+        <h2>Goals</h2>
+        <ul>
+            <li class="slide fade">
+            <h3>Mental Model</h3>
+            <p>Develop a mental model of the git repository, local vs remote, working directory vs stage vs index.</p>
+            </li>
+            <li class="slide fade">
+            <h3>Visualize Commands</h3>
+            <p>Once we have a mental model we can examine how common git commands affect the model.</p>
+            </li>
+        </ul>
+        </section>
+
+        <section class="slide">
+        <h2>Mental Model</h2>
+        <h3>Directed Acyclic Graph</h3>
+        <img src="directed_graph.png" />
+        </section>
+
+
+        <script src="deck.js/jquery-1.7.min.js"></script>
+        <script src="deck.js/core/deck.core.js"></script>
+        <script src="deck.js/extensions/menu/deck.menu.js"></script>
+
+        <script>
+            $(function() {
+                $.deck('.slide');
+                $.deck('go', 4);
+            });
+        </script>
+
+    </body>
+</html>
+
