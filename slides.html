@@ -10,44 +10,28 @@
         <link rel="stylesheet" href="deck.js/themes/style/web-2.0.css" type="text/css">
         <link rel="stylesheet" href="deck.js-custom-extensions/cube.css" type"text/css">
         <link rel="stylesheet" href="deck.js/extensions/menu/deck.menu.css" type"text/css">
-        <link rel="stylesheet" href="presentation-style/slides.css" type="text/css">
 
         <!-- Additional styling and extensions -->
-
-        <link href='http://fonts.googleapis.com/css?family=Sonsie+One' rel='stylesheet' type='text/css'>
-
-        <!-- 
-        <style type="text/css">
-            .deck-container {
-                background: url("light_toast.png");
-            }
-            .deck-container .slide h1 {
-                font-family: 'Sonsie One', cursive;
-                text-shadow: 5px 2px 4px #666;
-            }
-
-            .deck-container .slide blockquote:first-child {
-                margin-top: 25px;
-            }
-
-            .deck-container .slide blockquote.small {
-                font-size: 0.9em;
-            }
-        </style>
-        -->
+        <link rel="stylesheet" href="presentation-style/slides.css" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=IM+Fell+English+SC' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
 
         <script src="deck.js/modernizr.custom.js"></script>
     </head>
     <body class="deck-container">
-        <section id="title" class="slide">
+        <section class="slide">
         <h1>Jedi Git</h1>
         </section>
 
-        <section id="title" class="slide">
+        <section class="slide">
         <h1>Jedi Git?</h1>
         </section>
 
         <section class="slide">
+        <p class="bang">Use the source, Luke.</p>
+        <h2>Jedi Git</h2>
         <blockquote class="small">
             <p>For over a thousand generations, the Jedi Knights were the guardians of peace and justice in the Old Republic.</p>
             <p><cite>Obi-Wan Kenobi</cite></p>
@@ -66,33 +50,163 @@
             </ul>
             <p><cite>Linus Torvalds</cite></p>
         </blockquote>
+        </section>
 
-        <!--
-          At this point, story of how I learned git and why you should listen to me. 
-          -->
-
+        <section class="slide"><link href='http://fonts.googleapis.com/css?family=Lobster|Bangers|Rock+Salt' rel='stylesheet' type='text/css'>
+        <p class="bang">Git is super powerful!</p>
+        <h2>Introduction</h2>
+        <!-- It allows us to decide how to solve the problem of version control rather than be told by giving us the tools.
+        We are primarily problem solvers, after all, and are best suited to decide what works best in our individual situations. 
+        Where subversion dictated your version control workflow even if it didn't fit with your particualr situation, 
+        git gives you the tools you need and allows you to combine them in any way. Think grep, awk, and sed and how awesome they
+        are any time you need to do a little something something on *nix.
+        -->
+        <h4>Some reasons why we choose/migrated to git</h4>             
+        <ul>
+            <li>Advantages to individual developer workflows.</li> 
+            <!-- 
+            * Crafting commits that represent logical ideas and units of work rather than a physical movement of time.
+            * Dubstep and Basedrop
+            -->
+            <li>Advantages to team workflows.</li>
+            <!--
+            * Awesome for distributed teams working togeather, topic/feature/wip branches.
+            -->
+            <li>Flexibility in workflow. Branches are very seamless.</li>
+            <li>Faster and less error prone than subversion is, no more are files locked, unable to be cleaned or updated.</li>
+            <li>The OSS tools we use all use git and workflows for submitting patches have moved to pull requests.</li>
+        </ul>
         </section>
 
         <section class="slide">
         <h2>Goals</h2>
+        <!-- I've been using Git since not long after I first started working at PQA. I got tied of files being constantly locked
+        and not able to be cleaned up. It was difficult to craft logical commits when you had just completed a large chuck of work.
+        I also noticed that the OSS that we used were all moving into git repositories and there was the rise of Github.
+        Git was cool and it had a tool to work with subversion repositories so I switched. I added one extra step to my workflow
+        'push' and lived happily like that for a while. I slowlly added on more and more understanding, then when WCI/CA project
+        choose git from the start and the AU project switched I got trust in to the teacher role. I've learned so much since
+        then thanks to everyone awesome questions.
+
+        There are really two things that I hope we walk away with today. I hope that if I succeed that you will have the tools
+        to reason and answer your own question that we might not have directly covered.
+        -->
         <ul>
             <li class="slide fade">
             <h3>Mental Model</h3>
             <p>Develop a mental model of the git repository, local vs remote, working directory vs stage vs index.</p>
+            <!-- Be able to imagine the git repository and how it is structured. -->
             </li>
             <li class="slide fade">
             <h3>Visualize Commands</h3>
             <p>Once we have a mental model we can examine how common git commands affect the model.</p>
+            <!-- See how command affect that model and understand how to craft them togeather into meaningful workflows. -->
             </li>
         </ul>
         </section>
 
         <section class="slide">
+        <p class="bang">Graph Theory! Yay!</p>
         <h2>Mental Model</h2>
-        <h3>Directed Acyclic Graph</h3>
-        <img src="directed_graph.png" />
+        <h4>Graph</h4>
+        <p>A set of object where some of the objects are connected by links. Real world you can think of Social Networks as graphs. Each person is a node and the relationship between
+        them is an edge.</p>
+        <!-- Our graph happens to be a set of "Commits" where each commit represents a series of changes, and
+        the links or edges are the relationship between those changes.Facebook is a great example of this.
+        There are even databases that rather than being relational are graph. -->
+
+        <img src="presentation-images\Mental Model - Graph - Basic.png" />
+        <tt>V={A,B,C,D,E,F,G,H}</tt><br />
+        <tt>E={{A,B},{A,C},{B,E},{B,F},{C,H},{D,G},{E,H},{F,H},{G,H}}</tt> <!-- Order doesn't matter -->
         </section>
 
+        <section class="slide">
+        <p class="bang">Arrows make Graphs Happy!</p>
+        <h2>Mental Model</h2>
+        <h4>Directed Graph</h4>
+        <p>Each edge is given a direction, that is the relationship between two objects/nodes/elements goes only one direction.</p>
+        <img src="presentation-images\Mental Model - Graph - Directed.png" />
+        <tt>V={A,B,C,D,E,F,G,H}</tt><br />
+        <tt>E={{A,B},{A,C},{B,E},{B,F},{C,H},{D,G},{E,H},{F,H},{G,H}}</tt> <!-- Order does matter -->
+
+        <p class="slide">What is a social network that uses a directed graph?</p> <!-- LinkedIn, Twitter --> 
+        </section>
+
+        <section class="slide">
+        <p class="bang">Oh Snap!</p>
+        <h2>Mental Model</h2>
+        <h4>Acyclic Directed Graph???</h4>
+        <img src="presentation-images\Mental Model - Graph - Directed.png" />
+        <p class="slide" style="
+        position: absolute; 
+        z-index: 10; 
+        left: 222px; 
+        top: 250px;
+        background: transparent;
+        color: firebrick;
+        font-family: 'Rock Salt', cursive;">Uh oh! A cycle.</p>
+        </section>
+
+        <section class="slide">
+        <p class="bang">Acyclic Nirvana</p>
+        <h2>Mental Model</h2>
+        <h4>Acyclic Directed Graph</h4>
+        <p>Takes a directed graph one step farther and says that there can be no way in the graph to ever start at one point and loop back to it.</p>
+        <img src="presentation-images\Mental Model - Graph - Acyclic Directed.png" />
+        <tt>V={A,B,C,D,E,F,G,H}</tt><br />
+        <tt>E={{A,B},{A,C},{B,E},{B,F},{C,H},{D,G},{E,H},{F,H},{G,H}}</tt> <!-- Order does matter -->
+        </section>
+
+        <section class="slide">
+        <p class="bang">Commits, Ancestors, Changes, Oh My!</p>
+        <h2>Mental Model</h2>
+        <h4>git Commit</h4>
+        <p>A commit represents not only the changes that have been made, who did it, when and the commit message. But a commit also represents the relationship to past commits as
+        well. This is really important to understand as we start thinking about merges, rebases, and history.
+        <img src="presentation-images\Mental Model - Graph - Gits Graph.png" />
+        </section>
+
+        <section id="branches-and-tags" class="slide">
+        <p class="bang">Index Finger?</p>
+        <h2>Mental Model</h2>
+        <h4>Branches and HEAD</h4>
+        <p>Branches and Tags are nothing more than pointers. A simple file that contains the 40 character hash. Seriously look in your .git folder.</p>
+
+        <aside class="static">
+        <code>&nbsp;</code>
+        <img src="presentation-images\Mental Model - Branches and Tags - 01.png" />
+        </aside>
+
+        <aside class="static slide">
+        <code>git branch core</code>
+        <img src="presentation-images\Mental Model - Branches and Tags - 02.png" />
+        </aside>
+
+        <aside class="static slide">
+        <code>git checkout core</code>
+        <img src="presentation-images\Mental Model - Branches and Tags - 03.png" />
+        </aside>
+
+        <aside class="static slide">
+        <code>hack.. hack.. && git commit -a</code>
+        <img src="presentation-images\Mental Model - Branches and Tags - 04.png" />
+        </aside>
+
+        <aside class="static slide">
+        <code>git checkout master</code>
+        <img src="presentation-images\Mental Model - Branches and Tags - 05.png" />
+        </aside>
+
+        <aside class="static slide">
+        <code>hack.. hack.. && git commit -a</code>
+        <img src="presentation-images\Mental Model - Branches and Tags - 06.png" />
+        </aside>
+        </section>
+
+
+        <footer>
+        <div class="footer-author">Benjamin R. Doerr</div>
+        </footer>
 
         <script src="deck.js/jquery-1.7.min.js"></script>
         <script src="deck.js/core/deck.core.js"></script>
@@ -101,7 +215,7 @@
         <script>
             $(function() {
                 $.deck('.slide');
-                $.deck('go', 4);
+                $.deck('go', 14);
             });
         </script>
 

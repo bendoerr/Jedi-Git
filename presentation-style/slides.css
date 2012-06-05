@@ -4,6 +4,67 @@
 }
 
 .deck-container .slide {
-   background: url("light_toast.png");
-   padding: 0 20px;
+    background: url("light_toast.png");
+    padding: 0 20px;
+    margin: 20px 0;
+    min-height: 94%;
+}
+
+/* Tweak block quotes */
+.deck-container .slide blockquote:first-child {
+    margin-top: 25px;
+}
+
+.deck-container .slide blockquote.small {
+    font-size: 0.9em;
+}
+
+body > footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  line-height: 24px;
+  z-index: 4;
+}
+
+.footer-author {
+    float: right;
+}
+
+.deck-container .slide h1 {
+    font-family: 'IM Fell English SC', serif;
+    text-shadow: 5px 2px 4px #666;
+}
+
+.deck-container .slide h2,
+.deck-container .slide h3,
+.deck-container .slide h4 {
+    font-family: 'Lobster', cursive;
+}
+
+.deck-container .slide h2 {
+    margin-left: 0.4em;
+}
+
+.deck-container .slide .bang {
+    font-family: 'Bangers', cursive;
+    float: right;
+    margin-right: 0.75em;
+    margin-top: 0.75em;
+}
+
+.deck-container .slide h3.sub  {
+    margin-top: -0.8em;
+}
+
+#branches-and-tags .static {
+    position: absolute;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+#branches-and-tags .static img {
+    margin: 0 0;
 }
