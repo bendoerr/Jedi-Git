@@ -102,6 +102,9 @@
             <p>Once we have a mental model we can examine how common git commands affect the model.</p>
             <!-- See how command affect that model and understand how to craft them togeather into meaningful workflows. -->
             </li>
+            <li class="slide fade">
+            <h3>Questions</h3>
+            </li>
         </ul>
         </section>
 
@@ -201,8 +204,98 @@
         <code>hack.. hack.. && git commit -a</code>
         <img src="presentation-images\Mental Model - Branches and Tags - 06.png" />
         </aside>
+
+        <!-- A detached head is nothing more than when the HEAD pointer points at a specific commit rather than a branch pointer. -->
+
+        </section>
+        
+        <section class="slide">
+        <p class="bang">Whatever you want to call it.</p>
+        <h2>Mental Model</h2>
+        <h3>Stage/Index...</h3>
+        <!-- Ask the question: If you were to create a tool that allowed to to choose only part of the files that have been changed
+        and group them togeather to be commited. How might you do that? -->
+        </p>Git is all over the place in what it calls this thing. The most consistent way to think about it is as stagging things to be committed.</p>
+        <ul>
+            <li><code>git diff --cached</code> Does a diff of what is staged to be committed vs the HEAD. The documentation tells me that <strong>cached</strong> is a synonym of staged.</li>
+            <li><strong>index</strong> refers to the stage itself</li>
+            <li>using <code>git add</code> to <strong>update</strong> a file</li>
+            <li>etc... Inconsistencies in documentation.</li>
+        </ul>
+
+        <p>When talking to others refer to it as the stage or staging area, and staging to be committed.</p>
+        <p>This is a new feature compared to subversion. The subversion commit was all changes whereas git commit is just staged changes.</p>
+        <!-- Talk about the power of this. Talk about how you can even stage just individual parts of files. -->
+
         </section>
 
+        <section class="slide">
+        <p class="bang">Hard hat area!</p>
+        <h2>Mental Model</h2>
+        <h3>Working Directory</h3>
+        <img src="presentation-images\Mental Model - Working Directory.png" />
+        <p>Working Tree ~= Working Directory</p>
+        </section>
+        
+        <section class="slide">
+        <p class="bang">Distributed after all.</p>
+        <h2>Mental Model</h2>
+        <h3>Remotes and Remote Repositories</h3>
+        </p>Remote refers to a branch on your local repository that represents a known snapshot of a remote repository.</p>
+        <p>A remote repository is a git repository that is somewhere else.</p>
+        <p>If that isn't confusing, then I don't know what is.</p>
+        </section>
+        
+        <section class="slide">
+        <h1>Intermission</h1>
+        </section>
+        <!--
+        Commands I want to cover
+
+        Checkout
+        Branch
+        Merge (Fast-Forward) (True Merge)
+        Rebase
+        Cherry-Pick
+        Pull(Fetch) & Push
+        Reset (soft) (hard)
+
+        -->
+        <section class="slide">
+        <p class="bang">???</p>
+        <h2>Visualizing Commands</h2>
+        <h3>Checkout</h3>
+        </p>Switches to a branch or commit by updating the <em>working directory</em> and <em>stage</em> to match that commit, and moving the <em>HEAD</em>.</p>
+
+        <aside class="static slide">
+          <code>&nbsp;</code>
+          <img src="presentation-images/Visualizing Commands - Checkout - 01.png" />
+        </aside>
+
+        <aside class="static slide">
+          <code>git checkout release</code>
+          <img src="presentation-images/Visualizing Commands - Checkout - 02.png" />
+        </aside>
+
+        </section>
+        
+        <section class="slide">
+        <p class="bang">???</p>
+        <h2>???</h2>
+        </p>???</p>
+        </section>
+        
+        <section class="slide">
+        <p class="bang">???</p>
+        <h2>???</h2>
+        </p>???</p>
+        </section>
+        
+        <section class="slide">
+        <p class="bang">???</p>
+        <h2>???</h2>
+        </p>???</p>
+        </section>
 
         <footer>
         <div class="footer-author">Benjamin R. Doerr</div>
@@ -215,7 +308,7 @@
         <script>
             $(function() {
                 $.deck('.slide');
-                $.deck('go', 14);
+                $.deck('go', 24);
             });
         </script>
 

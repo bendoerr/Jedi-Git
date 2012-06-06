@@ -7,7 +7,7 @@
     background: url("light_toast.png");
     padding: 0 20px;
     margin: 20px 0;
-    min-height: 94%;
+    min-height: 97%;
 }
 
 /* Tweak block quotes */
@@ -58,13 +58,13 @@ body > footer {
     margin-top: -0.8em;
 }
 
-#branches-and-tags .static {
+.slide .static {
     position: absolute;
     min-height: 0;
     margin: 0;
     padding: 0;
 }
 
-#branches-and-tags .static img {
+.slide .static img {
     margin: 0 0;
 }
