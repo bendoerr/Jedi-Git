@@ -137,7 +137,7 @@
  the links or edges are the relationship between those changes.Facebook is a great example of this.
  There are even databases that rather than being relational are graph. -->
 
-            <img src="presentation-images\Mental Model - Graph - Basic.png" />
+            <img src="presentation-images/Mental Model - Graph - Basic.png" />
             <tt>V={A,B,C,D,E,F,G,H}</tt><br />
             <tt>E={{A,B},{A,C},{B,E},{B,F},{C,H},{D,G},{E,H},{F,H},{G,H}}</tt> <!-- Order doesn't matter -->
         </section>
@@ -150,7 +150,7 @@
 
             <p>Each edge is given a direction, that is the relationship between two objects/nodes/elements goes only one
                direction.</p>
-            <img src="presentation-images\Mental Model - Graph - Directed.png" />
+            <img src="presentation-images/Mental Model - Graph - Directed.png" />
             <tt>V={A,B,C,D,E,F,G,H}</tt><br />
             <tt>E={{A,B},{A,C},{B,E},{B,F},{C,H},{D,G},{E,H},{F,H},{G,H}}</tt> <!-- Order does matter -->
 
@@ -162,7 +162,7 @@
 
             <h2>Mental Model</h2>
             <h4>Acyclic Directed Graph???</h4>
-            <img src="presentation-images\Mental Model - Graph - Directed.png" />
+            <img src="presentation-images/Mental Model - Graph - Directed.png" />
 
             <p class="slide" style="
         position: absolute; 
@@ -182,7 +182,7 @@
 
             <p>Takes a directed graph one step farther and says that there can be no way in the graph to ever start at
                one point and loop back to it.</p>
-            <img src="presentation-images\Mental Model - Graph - Acyclic Directed.png" />
+            <img src="presentation-images/Mental Model - Graph - Acyclic Directed.png" />
             <tt>V={A,B,C,D,E,F,G,H}</tt><br />
             <tt>E={{A,B},{A,C},{B,E},{B,F},{C,H},{D,G},{E,H},{F,H},{G,H}}</tt> <!-- Order does matter -->
         </section>
@@ -196,7 +196,7 @@
             <p>A commit represents not only the changes that have been made, who did it, when and the commit message.
                But a commit also represents the relationship to past commits as
                well. This is really important to understand as we start thinking about merges, rebases, and history.
-                <img src="presentation-images\Mental Model - Graph - Gits Graph.png" />
+                <img src="presentation-images/Mental Model - Graph - Gits Graph.png" />
         </section>
 
         <section id="branches-and-tags" class="slide">
@@ -210,32 +210,32 @@
 
             <aside class="static">
                 <code>&nbsp;</code>
-                <img src="presentation-images\Mental Model - Branches and Tags - 01.png" />
+                <img src="presentation-images/Mental Model - Branches and Tags - 01.png" />
             </aside>
 
             <aside class="static slide">
                 <code>git branch core</code>
-                <img src="presentation-images\Mental Model - Branches and Tags - 02.png" />
+                <img src="presentation-images/Mental Model - Branches and Tags - 02.png" />
             </aside>
 
             <aside class="static slide">
                 <code>git checkout core</code>
-                <img src="presentation-images\Mental Model - Branches and Tags - 03.png" />
+                <img src="presentation-images/Mental Model - Branches and Tags - 03.png" />
             </aside>
 
             <aside class="static slide">
                 <code>hack.. hack.. && git commit -a</code>
-                <img src="presentation-images\Mental Model - Branches and Tags - 04.png" />
+                <img src="presentation-images/Mental Model - Branches and Tags - 04.png" />
             </aside>
 
             <aside class="static slide">
                 <code>git checkout master</code>
-                <img src="presentation-images\Mental Model - Branches and Tags - 05.png" />
+                <img src="presentation-images/Mental Model - Branches and Tags - 05.png" />
             </aside>
 
             <aside class="static slide">
                 <code>hack.. hack.. && git commit -a</code>
-                <img src="presentation-images\Mental Model - Branches and Tags - 06.png" />
+                <img src="presentation-images/Mental Model - Branches and Tags - 06.png" />
             </aside>
 
             <!-- A detached head is nothing more than when the HEAD pointer points at a specific commit rather than a branch pointer. -->
@@ -250,7 +250,7 @@
             <h3>Stage/Index...</h3>
             <!-- Ask the question: If you were to create a tool that allowed to to choose only part of the files that have been changed
 and group them togeather to be commited. How might you do that? -->
-            </p>Git is all over the place in what it calls this thing. The most consistent way to think about it is as
+            <p>Git is all over the place in what it calls this thing. The most consistent way to think about it is as
             stagging things to be committed.</p>
             <ul>
                 <li><code>git diff --cached</code> Does a diff of what is staged to be committed vs the HEAD. The
@@ -276,7 +276,7 @@ and group them togeather to be commited. How might you do that? -->
             <h2>Mental Model</h2>
 
             <h3>Working Directory</h3>
-            <img src="presentation-images\Mental Model - Working Directory.png" />
+            <img src="presentation-images/Mental Model - Working Directory.png" />
 
             <p>Working Tree ~= Working Directory</p>
         </section>
@@ -287,7 +287,7 @@ and group them togeather to be commited. How might you do that? -->
             <h2>Mental Model</h2>
 
             <h3>Remotes and Remote Repositories</h3>
-            </p>Remote refers to a branch on your local repository that represents a known snapshot of a remote
+            <p>Remote refers to a branch on your local repository that represents a known snapshot of a remote
                 repository.</p>
             <p>A remote repository is a git repository that is somewhere else.</p>
 
@@ -315,7 +315,7 @@ and group them togeather to be commited. How might you do that? -->
             <h2>Visualizing Commands</h2>
 
             <h3>Checkout</h3>
-            </p>Switches to a branch or commit by updating the <em>working directory</em> and <em>stage</em> to match
+            <p>Switches to a branch or commit by updating the <em>working directory</em> and <em>stage</em> to match
                 that commit, and moving the <em>HEAD</em>.</p>
 
             <aside class="static slide">
@@ -397,7 +397,7 @@ and group them togeather to be commited. How might you do that? -->
             <h2>Visualizing Commands</h2>
 
             <h3>Reset</h3>
-            </p>Sets the HEAD to a specific state and updates the index and working directory.</p>
+            <p>Sets the HEAD to a specific state and updates the index and working directory.</p>
             <h4>Default behavior</h4>
 
             <aside class="static slide">
@@ -416,8 +416,10 @@ and group them togeather to be commited. How might you do that? -->
                 <img src="presentation-images/Visualizing Commands - Reset Default - 01.png" />
             </aside>
 
-            <h4 class="slide"><code>git reset xwing.code</code><br />is the opposite of</br><code>git add
-                                                                                                  xwing.code</code></h4>
+            <h4 class="slide">
+                <code>git reset xwing.code</code><br />
+                is the opposite of<br />
+                <code>git add xwing.code</code></h4>
 
             <h3 class="slide" style="color: firebrick;font-family: 'Rock Salt', cursive;">But wait there is more!</h3>
 
@@ -429,7 +431,8 @@ and group them togeather to be commited. How might you do that? -->
             <h2>Visualizing Commands</h2>
 
             <h3>Reset</h3>
-            </p>Sets the HEAD to a specific state and updates the index and working directory.</p>
+            <p>Sets the HEAD to a specific state and updates the index and working directory.</p>
+
             <h4>Softly</h4>
 
             <aside class="static slide">
@@ -450,7 +453,7 @@ and group them togeather to be commited. How might you do that? -->
             <h2>Visualizing Commands</h2>
 
             <h3>Reset</h3>
-            </p>Sets the HEAD to a specific state and updates the index and working directory.</p>
+            <p>Sets the HEAD to a specific state and updates the index and working directory.</p>
             <h4>Hardcore</h4>
 
             <aside class="static slide">
@@ -466,16 +469,13 @@ and group them togeather to be commited. How might you do that? -->
         </section>
 
         <section class="slide">
-            <p class="bang">merge
-
-            <p>
+            <p class="bang">Foo+Bar=Toast</p>
 
             <h2>Visualizing Commands</h2>
 
             <h3>Merge</h3>
 
             <p>Joins two branches/histories together.</p>
-            <!-- True Merge. Useful options --squash, --stratagy --stratagy-option, --ff-only -->
 
             <aside class="static slide">
                 <code>&nbsp;</code>
@@ -487,67 +487,144 @@ and group them togeather to be commited. How might you do that? -->
                 <img src="presentation-images/Visualizing Commands - Merge True - 02.png" />
             </aside>
 
+            <aside class="static slide">
+                <h4>Useful Options</h4>
+                <ul>
+                    <li>
+                        <code>--squash</code>
+
+                        <p>Has the same affect as the merge except that a commit is not created. So your working
+                           directory and stage will have the result of the merge.</p>
+                    </li>
+                    <li>
+                        <code>-s &lt;strategy&gt;, --strategy=&lt;strategy&gt;</code>
+
+                        <p><code>-X &lt;option&gt;, --strategy-option=&lt;option&gt;</code></p>
+
+                        <p>There are a whole bunch of different algorithms that git can use to accomplish the merge. The
+                           man page for merge has pretty decent descriptions of what situations they are useful for. For
+                           example <code>--strategy=recursive --strategy-option=patience</code> is useful when merging
+                           two branches that have diverged significantly.</p>
+                    </li>
+                </ul>
+            </aside>
+
         </section>
 
         <section class="slide">
-            <p class="bang">merge
-
-            <p>
+            <p class="bang"></p>
 
             <h2>Visualizing Commands</h2>
 
             <h3>Merge</h3>
 
             <p>Joins two branches/histories together.</p>
+
             <h4>Fast-forward</h4>
+
+            <aside class="static slide">
+                <code>&nbsp;</code>
+                <img src="presentation-images/Visualizing Commands - Merge FF - 01.png">
+            </aside>
+
+            <aside class="static slide">
+                <code>git merge the-future</code>
+                <img src="presentation-images/Visualizing Commands - Merge FF - 02.png">
+            </aside>
+
+            <aside class="static slide">
+                <ul>
+                    <li>
+                        <code>--ff-only</code>
+
+                        <p>Only merge if a fast-forward merge is possible.</p>
+                    </li>
+                </ul>
+            </aside>
+
         </section>
 
         <section class="slide">
-            <p class="bang">rebase
-
-            <p>
+            <p class="bang">All your<br />rebase<br />are belong<br />to  us</p>
 
             <h2>Visualizing Commands</h2>
 
             <h3>Rebase</h3>
 
             <p>Gets one branches history onto another branch.</p>
+
+            <aside class="static slide">
+                <code>&nbsp;</code>
+                <img src="presentation-images/Visualizing Commands - Rebase - 01.png">
+            </aside>
+
+            <aside class="static slide">
+                <code>git rebase the-future</code>
+                <img src="presentation-images/Visualizing Commands - Rebase - 02.png">
+            </aside>
+
+            <aside class="static slide">
+                <h4>Interactive</h4>
+                <ul>
+                    <li>
+                        <code>-i, --interactive </code>
+
+                        <p>Super powerful. Check it out. Nuf said.</p>
+                    </li>
+                </ul>
+            </aside>
+
         </section>
 
         <section class="slide">
-            <p class="bang">The Orchard
-
-            <p>
+            <p class="bang">The Orchard</p>
 
             <h2>Visualizing Commands</h2>
 
             <h3>Cherry-pick</h3>
 
             <p>Gets one commit's changes onto another branch.</p>
+
+
+            <aside class="static slide">
+                <code>&nbsp;</code>
+                <img src="presentation-images/Visualizing Commands - Rebase - 01.png">
+            </aside>
+
+            <aside class="static slide">
+                <code>git cherry-pick 123aa1</code>
+                <img src="presentation-images/Visualizing Commands - Cherry-Pick - 02.png">
+            </aside>
+
         </section>
 
         <section class="slide">
-            <p class="bang">pull
-
-            <p>
+            <p class="bang">pull</p>
 
             <h2>Visualizing Commands</h2>
 
             <h3>Pull</h3>
 
-            <p>Get the changes from another repository into your local repository.</p>
+            <p>Get the changes from another repository into your local repository. This is a combination of
+                <code>git fetch</code>and <code>git merge/rebase</code></p>
+
         </section>
 
         <section class="slide">
-            <p class="bang">pull
-
-            <p>
+            <p class="bang">push</p>
 
             <h2>Visualizing Commands</h2>
 
             <h3>Push</h3>
 
-            <p>Get the changes from the local repository into another repository</p>
+            <p>Get the changes from the local repository into another repository.</p>
+        </section>
+
+        <section class="slide">
+            <p class="bang">???</p>
+
+            <h2>Questions</h2>
+
         </section>
 
         <footer>
@@ -561,7 +638,6 @@ and group them togeather to be commited. How might you do that? -->
         <script>
             $(function () {
                 $.deck('.slide');
-                $.deck('go', 46);
             });
         </script>
 
