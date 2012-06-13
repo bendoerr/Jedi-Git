@@ -138,8 +138,6 @@
  There are even databases that rather than being relational are graph. -->
 
             <img src="presentation-images/Mental Model - Graph - Basic.png" />
-            <tt>V={A,B,C,D,E,F,G,H}</tt><br />
-            <tt>E={{A,B},{A,C},{B,E},{B,F},{C,H},{D,G},{E,H},{F,H},{G,H}}</tt> <!-- Order doesn't matter -->
         </section>
 
         <section class="slide">
@@ -151,8 +149,6 @@
             <p>Each edge is given a direction, that is the relationship between two objects/nodes/elements goes only one
                direction.</p>
             <img src="presentation-images/Mental Model - Graph - Directed.png" />
-            <tt>V={A,B,C,D,E,F,G,H}</tt><br />
-            <tt>E={{A,B},{A,C},{B,E},{B,F},{C,H},{D,G},{E,H},{F,H},{G,H}}</tt> <!-- Order does matter -->
 
             <p class="slide">What is a social network that uses a directed graph?</p> <!-- LinkedIn, Twitter -->
         </section>
@@ -183,8 +179,6 @@
             <p>Takes a directed graph one step farther and says that there can be no way in the graph to ever start at
                one point and loop back to it.</p>
             <img src="presentation-images/Mental Model - Graph - Acyclic Directed.png" />
-            <tt>V={A,B,C,D,E,F,G,H}</tt><br />
-            <tt>E={{A,B},{A,C},{B,E},{B,F},{C,H},{D,G},{E,H},{F,H},{G,H}}</tt> <!-- Order does matter -->
         </section>
 
         <section class="slide">
@@ -251,7 +245,7 @@
             <!-- Ask the question: If you were to create a tool that allowed to to choose only part of the files that have been changed
 and group them togeather to be commited. How might you do that? -->
             <p>Git is all over the place in what it calls this thing. The most consistent way to think about it is as
-            stagging things to be committed.</p>
+            staging things to be committed.</p>
             <ul>
                 <li><code>git diff --cached</code> Does a diff of what is staged to be committed vs the HEAD. The
                                                    documentation tells me that <strong>cached</strong> is a synonym of
@@ -441,7 +435,7 @@ and group them togeather to be commited. How might you do that? -->
             </aside>
 
             <aside class="static slide">
-                <code>git reset --soft</code>
+                <code>git reset --soft HEAD~1</code>
                 <img src="presentation-images/Visualizing Commands - Reset Soft - 02.png" />
             </aside>
 
@@ -462,7 +456,7 @@ and group them togeather to be commited. How might you do that? -->
             </aside>
 
             <aside class="static slide">
-                <code>git reset --hard</code>
+                <code>git reset --hard HEAD~1</code>
                 <img src="presentation-images/Visualizing Commands - Reset Hard - 02.png" />
             </aside>
 
