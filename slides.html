@@ -17,6 +17,7 @@
         <link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
 
         <script src="deck.js/modernizr.custom.js"></script>
     </head>
@@ -208,7 +209,7 @@
         <!-- A detached head is nothing more than when the HEAD pointer points at a specific commit rather than a branch pointer. -->
 
         </section>
-        
+
         <section class="slide">
         <p class="bang">Whatever you want to call it.</p>
         <h2>Mental Model</h2>
@@ -236,7 +237,7 @@
         <img src="presentation-images\Mental Model - Working Directory.png" />
         <p>Working Tree ~= Working Directory</p>
         </section>
-        
+
         <section class="slide">
         <p class="bang">Distributed after all.</p>
         <h2>Mental Model</h2>
@@ -245,7 +246,7 @@
         <p>A remote repository is a git repository that is somewhere else.</p>
         <p>If that isn't confusing, then I don't know what is.</p>
         </section>
-        
+
         <section class="slide">
         <h1>Intermission</h1>
         </section>
@@ -268,46 +269,167 @@
         </p>Switches to a branch or commit by updating the <em>working directory</em> and <em>stage</em> to match that commit, and moving the <em>HEAD</em>.</p>
 
         <aside class="static slide">
-          <code>&nbsp;</code>
-          <img src="presentation-images/Visualizing Commands - Checkout - 01.png" />
-        </aside>
-
-         <aside class="static slide">
-          <code>git checkout release</code>
-          <img src="presentation-images/Visualizing Commands - Checkout - 02.png" />
+        <code>&nbsp;</code>
+        <img src="presentation-images/Visualizing Commands - Checkout - 01.png" />
         </aside>
 
         <aside class="static slide">
-          <code>git checkout release ...</code>
-          <img src="presentation-images/Visualizing Commands - Checkout - 03.png" />
+        <code>git checkout release</code>
+        <img src="presentation-images/Visualizing Commands - Checkout - 02.png" />
         </aside>
 
-        <aside class="slide">
+        <aside class="static slide">
+        <code>git checkout release ...</code>
+        <img src="presentation-images/Visualizing Commands - Checkout - 03.png" />
+        </aside>
+
+        <aside class="static slide">
         <h4>Other useful options</h4>
         <ul>
-            <li><code>-m, --merge</code></li>
-            <li><code>-b &lt;new branch&gt; [&lt;start point&gt;]
+            <li><code>-m, --merge</code> <p>Lets you switch branches when there are modifications in your working directory or stage that would conflict with the branch you are switching to. Normally the command would prevent you from switching in this case.</p></li>
+            <li><code>-b &lt;new branch&gt; [&lt;start point&gt;]</code> <p>Lets you create a new branch and then instantly checkout that branch. </p></li>
+        </ul>
         </aside>
 
 
         </section>
-        
+
         <section class="slide">
         <p class="bang">Like a<br />Tree</p>
-        <h2>Branch</h2>
-        </p>???</p>
+        <h2>Visualizing Commands</h2>
+        <h3>Branch</h3>
+        <p>Creates a new reference. By default will have that reference point to the current head. Doesn't switch to the new branch.</p>
+
+        <aside class="static slide">
+        <code>&nbsp;</code>
+        <img src="presentation-images/Visualizing Commands - Branch - 01.png" />
+        </aside> 
+
+        <aside class="static slide">
+        <code>git branch release</code>
+        <img src="presentation-images/Visualizing Commands - Branch - 02.png" />
+        </aside>
+
+        <aside class="static slide">
+        <h4>Other useful things about <code>git branch</code></h4>
+        <ul>
+            <li><code>&lt;branch-name&gt; [&lt;start-point&gt;]</code><p>Create a branch from any commit</p></li>
+            <li><code>no options</code> <p>Lists all branches. Include the <code>-a</code> option to list remote tracking branches as well.</p></li>
+            <li><code>-m [&lt;branch-name&gt;] &lt;new-branch-name&gt;</code><p>Renames current or given branch name to a new branch name.</p></li>
+            <li><code>-d &lt;branch-name&gt;</code><p>Deletes a branch. This only deletes the reference. If no other references exist to the commits reference by the branch then garbage collection will get them eventually.</p></li>
+        </ul>
+        </aside>
+        </section>
+
+        <section class="slide">
+        <p class="bang">Ctl-Alt-Del</p>
+        <h2>Visualizing Commands</h2>
+        <h3>Reset</h3>
+        </p>Sets the HEAD to a specific state and updates the index and working directory.</p>
+        <h4>Default behavior</h4>
+
+        <aside class="static slide">
+        <code>&nbsp;</code>
+        <img src="presentation-images/Visualizing Commands - Reset Default - 01.png" />
+        </aside>
+
+        <aside class="static slide">
+        <code>git reset xwing.code</code>
+        <img src="presentation-images/Visualizing Commands - Reset Default - 02.png" />
+        </aside>
+       
+
+        <aside class="static slide">
+        <code>git add xwing.code</code>
+        <img src="presentation-images/Visualizing Commands - Reset Default - 01.png" />
+        </aside> 
+
+        <h4 class="slide"><code>git reset xwing.code</code><br />is the opposite of</br><code>git add xwing.code</code></h4>
+        <h3 class="slide" style="color: firebrick;font-family: 'Rock Salt', cursive;">But wait there is more!</h3>
+
+        </section>
+
+        <section class="slide">
+        <p class="bang">alt-f4</p>
+        <h2>Visualizing Commands</h2>
+        <h3>Reset</h3>
+        </p>Sets the HEAD to a specific state and updates the index and working directory.</p>
+        <h4>Softly</h4>
+        
+        <aside class="static slide">
+        <code>&nbsp;</code>
+        <img src="presentation-images/Visualizing Commands - Reset Soft - 01.png" />
+        </aside>
+
+        <aside class="static slide">
+        <code>git reset --soft</code>
+        <img src="presentation-images/Visualizing Commands - Reset Soft - 02.png" />
+        </aside>
+ 
+        </section>
+
+        <section class="slide">
+        <p class="bang">ctl-alt-del<br />ctl-alt-del<br />ctl-alt-del</p>
+        <h2>Visualizing Commands</h2>
+        <h3>Reset</h3>
+        </p>Sets the HEAD to a specific state and updates the index and working directory.</p>
+        <h4>Hardcore</h4>
+        
+        <aside class="static slide">
+        <code>&nbsp;</code>
+        <img src="presentation-images/Visualizing Commands - Reset Soft - 01.png" />
+        </aside>
+
+        <aside class="static slide">
+        <code>git reset --hard</code>
+        <img src="presentation-images/Visualizing Commands - Reset Hard - 02.png" />
+        </aside>
+ 
+        </section>
+
+        <section class="slide">
+        <p class="bang">merge<p>
+        <h2>Visualizing Commands</h2>
+        <h3>Merge</h3>
+        <p>Joins two branches/histories together.</p>
+        <!-- True Merge. Useful options --squash, --stratagy --stratagy-option, --ff-only -->
+        
+        </section>
+
+        <section class="slide">
+        <p class="bang">merge<p>
+        <h2>Visualizing Commands</h2>
+        <h3>Merge</h3>
+        <p>Joins two branches/histories together.</p>
+        <h4>Fast-forward</h4>
+        </section>
+
+        <section class="slide">
+        <p class="bang">rebase<p>
+        <h2>Visualizing Commands</h2>
+        <h3>Rebase</h3>
+        <p>Gets one branches history onto another branch.</p>
         </section>
         
         <section class="slide">
-        <p class="bang">???</p>
-        <h2>???</h2>
-        </p>???</p>
+        <p class="bang">The Orchard<p>
+        <h2>Visualizing Commands</h2>
+        <h3>Cherry-pick</h3>
+        <p>Gets one commit's changes onto another branch.</p>
         </section>
-        
+
         <section class="slide">
-        <p class="bang">???</p>
-        <h2>???</h2>
-        </p>???</p>
+        <p class="bang">pull<p>
+        <h2>Visualizing Commands</h2>
+        <h3>Pull</h3>
+        <p>Get the changes from another repository into your local repository.</p>
+        </section>
+
+        <section class="slide">
+        <p class="bang">pull<p>
+        <h2>Visualizing Commands</h2>
+        <h3>Push</h3>
+        <p>Get the changes from the local repository into another repository</p>
         </section>
 
         <footer>
@@ -321,7 +443,7 @@
         <script>
             $(function() {
                 $.deck('.slide');
-                $.deck('go', 24);
+                $.deck('go', 30);
             });
         </script>
 
